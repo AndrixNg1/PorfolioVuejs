@@ -23,7 +23,5 @@ import { SpeedInsights } from '@vercel/speed-insights/vue';
 body, html {
   background: linear-gradient(to bottom right, #1f2937, #111827, #000000);
   color: white;
-  font-family: Arial, sans-serif;
-  height: 100%;
 }
 </style>
