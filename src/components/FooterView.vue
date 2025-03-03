@@ -39,6 +39,9 @@
             <li>
               <a href="/projet" class="hover:text-[#3ccf91] transition duration-300">Projet</a>
             </li>
+            <li>
+              <a href="/contact" class="hover:text-[#3ccf91] transition duration-300">Conatct</a>
+            </li>
           </ul>
         </div>
 

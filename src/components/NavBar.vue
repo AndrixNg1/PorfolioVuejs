@@ -48,6 +48,11 @@
                 <RouterLink :to="item.route" @click="toggleMenu">{{ item.label }}</RouterLink>
               </li>
             </ul>
+                        <!-- Bouton Prendre contact dans le menu mobile -->
+            <RouterLink to="/contact" @click="toggleMenu" class="mt-6 block text-center px-6 py-2 bg-gradient-to-r from-[#00ffcc] to-blue-500 rounded-full
+           text-white font-semibold shadow-lg hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-0.5">
+              Prendre contact
+            </RouterLink>
           </div>
         </transition>
       </div>
@@ -70,6 +75,7 @@ const menuItems = [
   { label: 'A propos', route: '/about' },
   { label: 'Projets', route: '/projets' },
   { label: 'Services', route: '/services' },
+
 
 ];
 
