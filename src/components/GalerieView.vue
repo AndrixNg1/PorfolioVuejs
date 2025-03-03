@@ -1,104 +1,44 @@
 <template>
-  <section class="gallery py-16 bg-gradient-to-br from-gray-800 to-gray-900">
-    <div class="container mx-auto px-6">
-      <!-- Titre de la section -->
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold text-emerald-400 tracking-tight">
-          Galerie
-        </h2>
-        <p class="text-lg text-gray-300 mt-4">
-          Découvrez quelques moments marquants qui définissent mon parcours et mes inspirations.
-        </p>
-      </div>
+  <section class="bg-gray-900 min-h-screen text-white flex flex-col items-center py-16">
+    <!-- Profil -->
+    <div class="text-center mt-10">
+      <img src="/images/and1.jpg" alt="Profile" class="w-24 h-24 rounded-full mx-auto border-4 border-gray-700" />
+      <h2 class="text-2xl font-bold mt-4">Andrix Ngoyi</h2>
+      <p class="text-gray-400">Développeur web</p>
+      <p class="text-gray-500 text-sm mt-2">
+        "En tant que développeur web, chaque ligne de code est une étape vers la création d'une expérience unique. Continue à apprendre et à innover, car chaque projet te rend plus fort !"
+      </p>
 
-      <!-- Grille des images -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div
-          v-for="(image, index) in images"
-          :key="index"
-          class="relative group overflow-hidden rounded-lg shadow-md transform hover:scale-105 transition-all duration-300"
-        >
-          <!-- Image -->
-          <img
-            :src="image.src"
-            :alt="image.alt"
-            class="w-full h-64 object-cover"
-          />
-          <!-- Overlay avec description -->
-          <div
-            class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <p class="text-white text-lg font-semibold text-center px-4">
-              {{ image.caption }}
-            </p>
-          </div>
-        </div>
+      <!-- Icônes sociales -->
+      <div class="flex justify-center space-x-4 mt-4 text-gray-400">
+        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-white"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="hover:text-white"><i class="fas fa-globe"></i></a>
+      </div>
+    </div>
+
+    <!-- Galerie d'images -->
+    <div class="grid grid-cols-3 gap-2 mt-10 w-10/12 max-w-4xl">
+      <div v-for="(image, index) in images" :key="index" class="overflow-hidden rounded-lg">
+        <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
-// Données des images de la galerie
 const images = reactive([
-  {
-    src: "images/WhatsApp Image 2025-01-13 à 22.29.30_fa240823.jpg",
-    alt: "Travail en équipe",
-    caption: "Travail en équipe sur un projet passionnant.",
-  },
-  {
-    src: "images/sudopico.jpg",
-    alt: "Moment marquant",
-    caption: "Moment marquant de mon parcours.",
-  },
-  {
-    src: "images/and1.jpg",
-    alt: "Détente",
-    caption: "Un moment de détente après une longue journée de travail.",
-  },
-  {
-    src: "images/Castel.jpg",
-    alt: "Réflexion",
-    caption: "Un temps de réflexion sur un projet.",
-  },
-  {
-    src: "images/sudo.jpg",
-    alt: "Histoire",
-    caption: "Un jour une histoire.",
-  },
-  {
-    src: "images/kaba.jpg",
-    alt: "Passion",
-    caption: "Illustration de ma passion pour le développement.",
-  },
+  { src: "/images/img1.jpg", alt: "Image 1" },
+  { src: "/images/img2.jpg", alt: "Image 2" },
+  { src: "/images/img3.jpg", alt: "Image 3" },
+  { src: "/images/img4.jpg", alt: "Image 4" },
+  { src: "/images/and1.jpg", alt: "Image 5" },
+  { src: "/images/img6.jpg", alt: "Image 6" },
+  { src: "/images/img7.jpg", alt: "Image 7" },
+  { src: "/images/img8.jpg", alt: "Image 8" },
+  { src: "/images/img9.jpg", alt: "Image 9" },
 ]);
 </script>
-
-<style scoped>
-/* Styles de la galerie */
-.gallery {
-  margin-top: 76px;
-  background: radial-gradient(circle, #1f2937, #0f172a);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-img {
-  border-radius: 8px;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-</style>

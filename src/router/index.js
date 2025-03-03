@@ -4,6 +4,7 @@ import Projet from '@/components/ProjetView.vue'
 import Services from '@/components/ServicesView.vue'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
+import Contact from '@/views/Contact.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
       name : 'services',
       component : Services
     },
+    {
+      path : '/contact',
+      name : 'contact',
+      component : Contact
+    }
   ]
 })
 

@@ -1,19 +1,19 @@
 <template>
-  <section class="projets container mx-auto px-6 mt-24">
-    <div class="text-center mb-12">
+  <section class="projets min-h-screen w-full bg-gray-900 text-white flex flex-col items-center justify-center px-6 py-20">
+    <div class="text-center max-w-3xl">
       <h2 class="text-5xl font-extrabold text-emerald-400 tracking-tight">Projets Réalisés</h2>
-      <p class="text-lg text-gray-300 mt-4">
+      <p class="text-lg text-gray-300 mt-8 leading-relaxed">
         Une vitrine de quelques-uns des meilleurs projets sur lesquels j'ai eu le plaisir de travailler.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-7xl w-full">
       <div v-for="(projet, index) in projets" :key="index" class="card hover:shadow-lg">
         <div v-if="projet.apercu" class="h-56 w-full">
           <img :src="projet.apercu" alt="Aperçu du projet" class="w-full h-full object-cover rounded-t-lg"/>
         </div>
-        <div class="p-6 bg-gray-900 rounded-b-lg">
-          <h3 class="text-2xl font-semibold text-white mb-2">{{ projet.titre }}</h3>
+        <div class="p-6 bg-gray-800/90 backdrop-blur-lg rounded-b-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-white mb-3">{{ projet.titre }}</h3>
           <div class="flex flex-wrap gap-2 mb-4">
             <span v-for="(tech, techIndex) in projet.technologies" :key="techIndex" class="badge">
               {{ tech }}
@@ -40,22 +40,10 @@
         </div>
       </div>
     </div>
-    <div class="mt-10 flex justify-center">
-      <a
-        href="https://github.com/AndrixNg1"
-        target="_blank"
-        class="px-6 py-3 bg-emerald-400 text-black font-semibold rounded-md shadow-md hover:bg-emerald-300 transition duration-300">
-        Voir tous les projets
-      </a>
-    </div>
   </section>
-  <FooterView/>
 </template>
 
 <script setup>
-import FooterView from './FooterView.vue';
-import Footer from './FooterView.vue';
-
 defineProps({
   showFooter: {
     type: Boolean,
@@ -80,15 +68,24 @@ const projets = [
     liveUrl: "",
     apercu: "images/calc.png",
   },
+  {
+    titre: "Challenge club scientifique Math-Info",
+    description: "Challenge lancé par le Cercle Scientifique Math-Info.",
+    technologies: ["TailwindCSS", "HTML5 & CSS3"],
+    details: "https://github.com/AndrixNg1/cercle-scientifique-.git",
+    liveUrl: "https://cercle-scientifique.netlify.app/",
+    apercu: "images/Math-Info.png",
+  },
 ];
 </script>
 
 <style scoped>
-/* Carte des projets */
+/* Effet glassmorphism sur les cartes */
 .card {
-  background: #1a1a1a;
+  background: rgba(26, 26, 26, 0.8);
   border-radius: 0.75rem;
   overflow: hidden;
+  backdrop-filter: blur(10px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }

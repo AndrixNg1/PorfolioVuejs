@@ -37,7 +37,7 @@
               <a href="/services" class="hover:text-[#3ccf91] transition duration-300">Services</a>
             </li>
             <li>
-              <a href="/contact" class="hover:text-[#3ccf91] transition duration-300">Contact</a>
+              <a href="/projet" class="hover:text-[#3ccf91] transition duration-300">Projet</a>
             </li>
           </ul>
         </div>

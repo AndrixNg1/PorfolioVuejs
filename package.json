@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "lucide-vue-next": "^0.469.0",
     "primeicons": "^7.0.0",
+    "tsparticles": "^3.8.1",
     "typewriter-effect": "^2.21.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"

@@ -1,6 +1,9 @@
 <template>
   <!-- Main container with padding for fixed navigation -->
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <!-- Particles Background -->
+    <div id="particles-js" class="absolute top-0 left-0 w-full h-screen z-[-1]"></div>
+
     <!-- Hero Section -->
     <section class="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-6rem)] pt-28">
       <!-- Introduction Text -->
@@ -76,10 +79,12 @@
 import { ref, onMounted } from 'vue';
 import Typewriter from 'typewriter-effect/dist/core';
 import Skills from './SkillsView.vue';
+ // Importation de tsparticles
 
 const typewriter = ref(null);
 
 onMounted(() => {
+  // Initialisation du Typewriter
   const typewriterInstance = new Typewriter(typewriter.value, {
     loop: true,
     deleteSpeed: 50,
@@ -95,6 +100,17 @@ onMounted(() => {
     .typeString("Innovateur Autodidacte")
     .pauseFor(1500)
     .start();
+
+  // Configuration de tsparticles pour l'arrière-plan
+  Particles.load("particles-js", {
+    particles: {
+      number: { value: 50 },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      move: { enable: true, speed: 2 },
+    },
+  });
 });
 </script>
 
@@ -125,6 +141,16 @@ onMounted(() => {
 }
 .animate-slideInLeft-delay {
   animation: slideInLeftDelay 1.2s ease-in-out;
+}
+
+/* Particles Background Style */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Placer derrière le contenu */
 }
 
 /* Colors */

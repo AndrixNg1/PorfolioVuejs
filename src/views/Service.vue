@@ -1,10 +1,10 @@
 <template>
-  <ServceView/>
-  <FooterView/>
+  <ServicesView/>
+  <ServiceTwo/>
 </template>
 
 <script setup>
+import ServicesView from '@/components/ServicesView.vue';
+import ServiceTwo from '@/components/ServiceTwo.vue';
 
-import ServiceView from '@/components/ServiceView.vue';
-import FooterView from '@/components/FooterView.vue';
 </script>
