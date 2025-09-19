@@ -86,7 +86,7 @@ onBeforeUnmount(() => ctx && ctx.revert())
       <!-- CTA Buttons -->
       <div class="hero-cta mt-6 flex flex-wrap gap-4">
         <!-- Hire Me -->
-        <a href="#contact"
+        <a href="/contact"
           class="px-6 py-3 bg-green-500 text-white font-semibold rounded-2xl shadow-md hover:bg-green-600 hover:scale-105 transition transform duration-300">
           Hire Me
         </a>
