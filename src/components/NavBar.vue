@@ -71,10 +71,8 @@ const isOpen = ref(false);
 const route = useRoute();
 
 const menuItems = [
-  { label: 'Accueil', route: '/' },
   { label: 'A propos', route: '/about' },
   { label: 'Projets', route: '/projets' },
-  { label: 'Services', route: '/services' },
 
 
 ];
