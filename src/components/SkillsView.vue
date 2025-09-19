@@ -1,129 +1,104 @@
 <template>
-  <div class="p-4 mt-8">
-    <!-- Section Compétences Techniques -->
-    <h2 class="text-3xl font-bold text-center text-gradient mb-10">
-      Compétences Techniques
+  <section class="mt-11 px-6 lg:px-24 py-12 text-white">
+    <h2 class="text-4xl lg:text-5xl font-extrabold text-center mb-12 text-gradient">
+      My Skills & Strengths
     </h2>
-    <div class="skills-container">
-      <div
-        v-for="(skill, index) in infiniteSkills"
-        :key="index"
-        class="card text-center p-6 bg-gradient-to-b from-[#1e1e1e] to-[#292929] rounded-xl shadow-lg"
-      >
-        <img
-          :src="skill.image"
-          alt="skills"
-          class="w-20 h-20 mx-auto mb-4 hover:scale-110 transition-transform duration-300"
-        />
-      </div>
-    </div>
 
-    <!-- Section Outils -->
-    <div class="mt-16">
-      <h2 class="text-3xl font-bold text-center text-gradient mb-8">
-        Outils
-      </h2>
-      <div class="tools-container">
-        <div
-          v-for="(tool, index) in infiniteTools"
-          :key="index"
-          class="card text-center p-6 bg-gradient-to-b from-[#1e1e1e] to-[#292929] rounded-xl shadow-lg"
-        >
-          <img
-            :src="tool.icon"
-            alt="tool"
-            class="w-20 h-20 mx-auto mb-4 hover:scale-110 transition-transform duration-300"
-          />
+    <div class="grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-2">
+      <div
+        v-for="(skill, i) in skillsInfo"
+        :key="i"
+        class="skill-card p-10 bg-gray-900 rounded-3xl shadow-2xl relative overflow-hidden"
+      >
+        <!-- Icon next to title -->
+        <div class="flex items-center mb-4">
+          <component :is="skill.icon" class="w-6 h-6 text-green-400 mr-3" />
+          <h3 class="text-2xl font-bold text-green-400">{{ skill.title }}</h3>
         </div>
+
+        <!-- Description -->
+        <p class="text-gray-300 text-xl leading-relaxed">{{ skill.description }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Code, Layout, Lightbulb, Users } from 'lucide-vue-next'
 
-const skills = [
-  { image: '/images/4.svg' },
-  { image: '/images/8.svg' },
-  { image: '/images/11.svg' },
-  { image: '/images/1_KTAstxDm8yEG17u94avrXw-removebg-preview.png' },
-  { image: '/images/18.svg' },
-  { image: '/images/21 (1).svg' },
-  { image: '/images/laravel-logo.png' },
-  { image: '/images/30.svg' },
-  { image: '/images/33.svg' },
-  { image: '/images/elephant.png' },
-  { image: '/images/jetpack_compose_icon_RGB-removebg-preview.png' },
+gsap.registerPlugin(ScrollTrigger)
+
+const skillsInfo = [
+  {
+    title: "Fullstack Development",
+    description: "I master the complete development cycle, from front-end to back-end, delivering robust and high-performance solutions.",
+    icon: Code
+  },
+  {
+    title: "Software Architecture",
+    description: "Able to design scalable, maintainable architectures tailored to business needs.",
+    icon: Layout
+  },
+  {
+    title: "Innovation & Creativity",
+    description: "Always seeking new ideas and solutions to improve user experience and code efficiency.",
+    icon: Lightbulb
+  },
+  {
+    title: "Collaboration & Communication",
+    description: "I value teamwork, constructive exchanges, and knowledge sharing.",
+    icon: Users
+  },
 ]
-
-const tools = [
-  { icon: '/images/images-removebg-preview.png' },
-  { icon: '/images/imagesAndroid-removebg-preview.png' },
-  { icon: '/images/Visual-Studio-Code-est-un-editeur-de-code-solide-pour-removebg-preview.png' },
-  { icon: '/images/85f69649-5387-44c2-ba45-81ae13812e36-cover-removebg-preview.png' },
-  { icon: '/images/avnac-removebg-preview.png' },
-  { icon: '/images/npm-logo-red.svg' },
-]
-
-// Duplicating arrays for infinite loop
-const infiniteSkills = [...skills, ...skills]
-const infiniteTools = [...tools, ...tools]
-
-// Automatic scroll
-const autoScroll = (selector, duration) => {
-  const container = document.querySelector(selector)
-  let scrollAmount = 0
-
-  const scrollStep = () => {
-    scrollAmount += 1
-    container.scrollLeft = scrollAmount
-    if (scrollAmount >= container.scrollWidth / 2) {
-      container.scrollLeft = 0
-      scrollAmount = 0
-    }
-  }
-
-  setInterval(scrollStep, duration)
-}
 
 onMounted(() => {
-  autoScroll('.skills-container', 30) // Adjust duration for speed
-  autoScroll('.tools-container', 30)
+  gsap.from(".skill-card", {
+    opacity: 0,
+    y: 50,
+    scale: 0.95,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".skill-card",
+      start: "top 85%",
+    }
+  })
 })
 </script>
 
 <style scoped>
-/* Styles pour les sections de défilement */
-.skills-container,
-.tools-container {
-  display: flex;
-  gap: 1rem;
-  overflow: hidden;
-  position: relative;
-  background: #121212;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  white-space: nowrap;
-}
-
-/* Cartes */
-.card {
-  flex: 0 0 auto;
-  width: 150px;
-  height: 150px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 15px 30px rgba(60, 207, 145, 0.3);
-}
-
-/* Gradient de titre */
 .text-gradient {
   background: linear-gradient(to right, #3ccf91, #00b4d8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Skill card subtle border on hover */
+.skill-card {
+  transition: transform 0.3s ease;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid #3ccf91;
+  border-radius: 1.5rem;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 </style>

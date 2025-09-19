@@ -74,17 +74,17 @@ onBeforeUnmount(() => ctx && ctx.revert())
           💡 About Me
         </h2>
 
-        <p class="about-paragraph text-lg text-gray-300 mb-4 leading-relaxed">
+        <p class="about-paragraph text-xl text-gray-300 mb-4 leading-relaxed">
           I am a passionate and disciplined <span class="text-primary font-semibold">Fullstack Developer</span>, skilled
           in delivering comprehensive digital solutions combining <span class="text-primary font-semibold">performance,
             scalability</span> and <span class="text-primary font-semibold">user experience</span>.
         </p>
-        <p class="about-paragraph text-lg text-gray-300 mb-4 leading-relaxed">
+        <p class="about-paragraph text-xl text-gray-300 mb-4 leading-relaxed">
           I master the full software architecture lifecycle, from precise <span
             class="text-primary font-semibold">requirement analysis</span> to delivering reliable, maintainable
           products.
         </p>
-        <p class="about-paragraph text-lg text-gray-300 leading-relaxed">
+        <p class="about-paragraph text-xl text-gray-300 leading-relaxed">
           Collaborative and attentive, I value constructive communication and collective innovation, always committed to
           <span class="text-primary font-semibold">code quality</span> and <span class="text-primary font-semibold">best
             practices</span>.
