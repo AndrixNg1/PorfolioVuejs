@@ -38,6 +38,7 @@
 </template>
 
 <style scoped>
+
 .social-icon {
   display: flex;
   align-items: center;
