@@ -1,33 +1,33 @@
 <template>
-  <footer class="bg-gray-900 bg-opacity-90 backdrop-blur-lg text-white py-6 px-6 rounded-t-2xl shadow-lg">
+  <footer class="bg-gray-900 bg-opacity-90 backdrop-blur-lg text-white py-6 px-6 rounded-t-2xl shadow-lg relative">
+
+    <!-- Ligne en haut -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-t-2xl"></div>
+
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 
       <!-- Left: Copyright -->
-      <div class="text-gray-400 text-xl">
+      <div class="text-gray-400 text-center md:text-left text-xl">
         © 2024 - 2025 Andrix-Ngoyi. All Rights Reserved | Design by Andrix Ngoyi
-
       </div>
 
       <!-- Right: Social Icons -->
       <div class="flex space-x-4">
-            <a href="https://github.com/AndrixNg1" target="_blank"
+        <a href="https://github.com/AndrixNg1" target="_blank"
           class="flex items-center justify-center w-12 h-12 border-2 border-green-500 rounded-full hover:scale-110 hover:shadow-lg transition transform duration-300">
           <img src="/images/sv3.svg" alt="GitHub" class="w-6 h-6" />
         </a>
 
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/andrix-ngoyi-469662321" target="_blank"
           class="flex items-center justify-center w-12 h-12 border-2 border-green-500 rounded-full hover:scale-110 hover:shadow-lg transition transform duration-300">
           <img src="/images/sv2.svg" alt="LinkedIn" class="w-6 h-6" />
         </a>
 
-        <!-- Email -->
         <a href="mailto:andrixngoyi243@gmail.com"
           class="flex items-center justify-center w-12 h-12 border-2 border-green-500 rounded-full hover:scale-110 hover:shadow-lg transition transform duration-300">
           <img src="/images/sv1.svg" alt="Email" class="w-6 h-6" />
         </a>
 
-        <!-- Instagram -->
         <a href="https://www.instagram.com/andrix_ngoyi" target="_blank"
           class="flex items-center justify-center w-12 h-12 border-2 border-green-500 rounded-full hover:scale-110 hover:shadow-lg transition transform duration-300">
           <i class="pi pi-instagram text-green-500 text-lg"></i>
@@ -38,7 +38,6 @@
 </template>
 
 <style scoped>
-
 .social-icon {
   display: flex;
   align-items: center;
