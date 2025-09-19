@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import AboutSection from "@/components/AboutSection.vue";
 import Skills from "@/components/SkillsView.vue";
 import ProjetView from '@/components/ProjetView.vue';
-
+import WhatIDo from "@/components/WhatIDo.vue";
 
 </script>
 
@@ -13,6 +13,7 @@ import ProjetView from '@/components/ProjetView.vue';
     <HeroSection />
     <AboutSection />
     <Skills />
+    <WhatIDo />
     <ProjetView />
   </div>
 </template>

@@ -18,7 +18,7 @@ const redirectToContact = () => {
 
       <!-- Développement Web -->
       <div class="mt-16 flex flex-col md:flex-row items-center gap-10">
-        <img src="/images/service1.jpg" class="w-full md:w-1/2 rounded-lg shadow-lg" alt="Développement Web" />
+        <img src="#" class="w-full md:w-1/2 rounded-lg shadow-lg" alt="Développement Web" />
         <div class="md:w-1/2">
           <h2 class="text-3xl font-bold">Développement Web</h2>
           <p class="mt-2 text-gray-300">
@@ -35,7 +35,7 @@ const redirectToContact = () => {
 
       <!-- Marketing Digital -->
       <div class="mt-16 flex flex-col md:flex-row-reverse items-center gap-10">
-        <img src="/images/service2.jpg" class="w-full md:w-1/2 rounded-lg shadow-lg" alt="Marketing Digital" />
+        <img src="#" class="w-full md:w-1/2 rounded-lg shadow-lg" alt="Marketing Digital" />
         <div class="md:w-1/2">
           <h2 class="text-3xl font-bold">Marketing Digital</h2>
           <p class="mt-2 text-gray-300">
