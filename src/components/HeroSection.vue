@@ -25,13 +25,13 @@ onMounted(() => {
     deleteSpeed: 50,
   })
   typewriterInstance
-    .typeString("Web Developer </>")
+    .typeString("Fullstack Developer")
     .pauseFor(1500)
     .deleteAll()
-    .typeString("Mobile Developer")
+    .typeString("Creative Technologist")
     .pauseFor(1500)
     .deleteAll()
-    .typeString("Self-taught Innovator")
+    .typeString("Digital Architect")
     .pauseFor(1500)
     .start()
 })
@@ -48,12 +48,9 @@ onBeforeUnmount(() => ctx && ctx.revert())
         Hello <span class="inline-block animate-wave">👋</span>, I’m
       </h1>
       <h2 class="hero-name text-6xl font-extrabold text-white mb-2">Andrix Ngoyi</h2>
-      <p class="hero-paragraph mt-8 text-xl text-gray-300 max-w-2xl">
+       <p class="hero-paragraph mt-8 text-xl text-gray-300 max-w-2xl">
         <span ref="typewriter" class="text-white"></span><br />
-        I’m a <span class="font-bold text-green-400">self-taught developer</span> driven by curiosity and innovation.
-        From <span class="font-semibold text-green-400">Web</span> to <span
-          class="font-semibold text-green-400">Mobile</span>,
-        I’m obsessed with building cutting-edge solutions that make a difference.
+        I am a passionate and disciplined <span class="font-bold text-green-400">Fullstack Developer</span> and <span class="font-bold text-green-400">Creative Technologist</span>, dedicated to building high-performance, scalable, and user-centric solutions that drive digital innovation.
       </p>
 
       <!-- Icônes sociales -->
@@ -92,7 +89,7 @@ onBeforeUnmount(() => ctx && ctx.revert())
         </a>
 
         <!-- My Work -->
-        <a href="#portfolio"
+        <a href="/projets"
           class="px-6 py-3 border-2 border-green-500 text-green-500 font-semibold rounded-2xl hover:bg-green-500 hover:text-white hover:scale-105 transition transform duration-300">
           My Work
         </a>
