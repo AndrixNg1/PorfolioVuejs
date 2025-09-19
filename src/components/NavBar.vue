@@ -70,7 +70,7 @@ const isOpen = ref(false);
 const route = useRoute();
 
 const menuItems = [
-  { label: 'A propos', route: '/about' },
+  //{ label: 'A propos', route: '/about' },
   { label: 'Projets', route: '/projets' },
 ];
 
