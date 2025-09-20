@@ -3,10 +3,10 @@ import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-// Icônes pour Skills
-import { Code, Palette, Smartphone, Server, Layers } from "lucide-vue-next"
+// Icônes Skills
+import { Code, Palette, Smartphone, Server } from "lucide-vue-next"
 
-// Icônes pour Hobbies
+// Icônes Hobbies
 import { Music, Book, Trophy, Globe, Film, Mic } from "lucide-vue-next"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -18,27 +18,18 @@ onMounted(() => {
     x: -50,
     duration: 1,
     ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".skills-col",
-      start: "top 80%",
-    }
+    scrollTrigger: { trigger: ".skills-col", start: "top 80%" }
   })
 
-  // Animation barres de progression
+  // Progress bars
   gsap.utils.toArray(".progress-bar").forEach((bar) => {
     const value = bar.getAttribute("data-value")
-    gsap.fromTo(bar,
-      { width: "0%" },
-      {
-        width: value + "%",
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: bar,
-          start: "top 85%",
-        }
-      }
-    )
+    gsap.fromTo(bar, { width: "0%" }, {
+      width: value + "%",
+      duration: 1.5,
+      ease: "power3.out",
+      scrollTrigger: { trigger: bar, start: "top 85%" }
+    })
   })
 
   // Anim Hobbies
@@ -47,53 +38,49 @@ onMounted(() => {
     x: 50,
     duration: 1,
     ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".hobbies-col",
-      start: "top 80%",
-    }
+    scrollTrigger: { trigger: ".hobbies-col", start: "top 80%" }
   })
 })
 </script>
 
 <template>
-  <section class="w-full py-20 px-6 bg-gray-900 text-gray-100">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+  <section class="w-full py-16 px-4 sm:px-6 lg:px-12 bg-gray-900 text-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
 
       <!-- Skills -->
       <div class="skills-col">
-        <h2 class="text-3xl font-bold text-green-400 mb-6">Skills</h2>
-        <ul class="space-y-6 text-lg">
-
-          <!-- Vue.js  -->
+        <h2 class="text-2xl sm:text-3xl font-bold text-green-400 mb-6">Skills</h2>
+        <ul class="space-y-6 text-base sm:text-lg">
+          <!-- Vue.js -->
           <li>
             <div class="flex items-center space-x-3 mb-2">
-              <Code class="w-6 h-6 text-green-400" />
-              <span>Vue.js </span>
-              <span class="ml-auto text-sm text-gray-400">85%</span>
+              <Code class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
+              <span>Vue.js</span>
+              <span class="ml-auto text-xs sm:text-sm text-gray-400">85%</span>
             </div>
             <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
               <div class="progress-bar h-2 bg-green-400 rounded-full" data-value="85"></div>
             </div>
           </li>
 
-          <!-- React Native / Expo -->
+          <!-- React Native -->
           <li>
             <div class="flex items-center space-x-3 mb-2">
-              <Smartphone class="w-6 h-6 text-green-400" />
+              <Smartphone class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
               <span>React Native / Expo</span>
-              <span class="ml-auto text-sm text-gray-400">60%</span>
+              <span class="ml-auto text-xs sm:text-sm text-gray-400">60%</span>
             </div>
             <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
               <div class="progress-bar h-2 bg-green-400 rounded-full" data-value="60"></div>
             </div>
           </li>
 
-          <!-- Laravel & APIs -->
+          <!-- Laravel -->
           <li>
             <div class="flex items-center space-x-3 mb-2">
-              <Server class="w-6 h-6 text-green-400" />
+              <Server class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
               <span>Laravel & APIs</span>
-              <span class="ml-auto text-sm text-gray-400">75%</span>
+              <span class="ml-auto text-xs sm:text-sm text-gray-400">75%</span>
             </div>
             <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
               <div class="progress-bar h-2 bg-green-400 rounded-full" data-value="75"></div>
@@ -103,21 +90,21 @@ onMounted(() => {
           <!-- TailwindCSS -->
           <li>
             <div class="flex items-center space-x-3 mb-2">
-              <Palette class="w-6 h-6 text-green-400" />
+              <Palette class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
               <span>TailwindCSS</span>
-              <span class="ml-auto text-sm text-gray-400">85%</span>
+              <span class="ml-auto text-xs sm:text-sm text-gray-400">85%</span>
             </div>
             <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
               <div class="progress-bar h-2 bg-green-400 rounded-full" data-value="85"></div>
             </div>
           </li>
 
-          <!-- Fullstack Development -->
+          <!-- Cloud -->
           <li>
             <div class="flex items-center space-x-3 mb-2">
-              <Server class="w-6 h-6 text-green-400" />
+              <Server class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
               <span>Cloud Computing AWS</span>
-              <span class="ml-auto text-sm text-gray-400">45%</span>
+              <span class="ml-auto text-xs sm:text-sm text-gray-400">45%</span>
             </div>
             <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
               <div class="progress-bar h-2 bg-green-400 rounded-full" data-value="45"></div>
@@ -128,10 +115,8 @@ onMounted(() => {
 
       <!-- Hobbies -->
       <div class="hobbies-col">
-        <h2 class="text-3xl font-bold text-blue-400 mb-6">Hobbies</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          <!-- Items générés -->
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-400 mb-6">Hobbies</h2>
+        <div class="grid grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-6">
           <div v-for="(hobby, i) in [
             { icon: Music, label: 'Music' },
             { icon: Book, label: 'Reading' },
@@ -139,15 +124,14 @@ onMounted(() => {
             { icon: Globe, label: 'Traveling' },
             { icon: Mic, label: 'Sharing Experience' },
             { icon: Film, label: 'Anime & Movies' }
-          ]" :key="i" class="p-6 text-center hover:scale-105 transition">
+          ]" :key="i"
+            class="p-4 sm:p-6 text-center hover:scale-105 transition rounded-xl backdrop-blur-md">
 
-            <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gray-950 shadow-lg">
-              <component :is="hobby.icon" class="w-8 h-8 text-blue-400" />
+            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto flex items-center justify-center rounded-full bg-gray-950 shadow-lg">
+              <component :is="hobby.icon" class="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
             </div>
-
-            <p class="mt-3 text-lg">{{ hobby.label }}</p>
+            <p class="mt-2 sm:mt-3 text-sm sm:text-lg">{{ hobby.label }}</p>
           </div>
-
         </div>
       </div>
 

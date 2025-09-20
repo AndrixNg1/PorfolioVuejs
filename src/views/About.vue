@@ -8,4 +8,5 @@ import skillshobbies from "@/components/skillshobbies.vue"
 <template>
 <SectionAbout />
 <skillshobbies />
+<GalerieView />
 </template>
