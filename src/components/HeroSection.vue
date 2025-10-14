@@ -98,7 +98,7 @@ onBeforeUnmount(() => ctx && ctx.revert())
 
     <!-- Image -->
     <div class="hero-image flex justify-center lg:w-1/2 mt-12 lg:mt-0 relative z-20">
-      <img src="/images/home/1.jpeg" alt="Andrix Ngoyi"
+      <img src="/images/home/home.jpeg" alt="Andrix Ngoyi"
         class="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl transform hover:scale-110 transition duration-300" />
     </div>
   </section>
