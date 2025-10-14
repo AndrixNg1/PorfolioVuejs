@@ -1,25 +1,31 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faDatabase, faLaptopCode, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import 'primeicons/primeicons.css';
-import './assets/main.css';
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
 
-library.add(faLaptopCode, faMobileAlt, faDatabase);
+// ✅ FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faDatabase, faLaptopCode, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+// ✅ Styles globaux
+import 'primeicons/primeicons.css'
+import './assets/main.css'
 
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
+// ✅ Motion (animations)
+import { MotionPlugin } from '@vueuse/motion'
 
+// --- Configuration ---
+library.add(faLaptopCode, faMobileAlt, faDatabase)
 
-// Création de l'application Vue
-const app = createApp(App);
+// --- Création de l’app ---
+const app = createApp(App)
 
-// Enregistrement du composant FontAwesome
-app.component('font-awesome-icon', FontAwesomeIcon);
+// --- Plugins ---
+app.use(router)
+app.use(MotionPlugin)
 
-// Utilisation du routeur si nécessaire
-app.use(router);
+// --- Composants globaux ---
+app.component('font-awesome-icon', FontAwesomeIcon)
 
-// Montage de l'application
-app.mount('#app');
+// --- Montage final ---
+app.mount('#app')

@@ -1,81 +1,102 @@
 <template>
-  <section class="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6">
-    <div class="max-w-6xl w-full text-center">
-      <!-- Titre principal -->
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">
-        Contact me to discuss your <span class="text-[#00ffcc]">project</span>
-      </h1>
-      <p class="text-xl text-gray-400 mb-10">
-        You can reach me through the following contact details.
-      </p>
+  <section
+    class="relative bg-gray-900 text-white px-6 md:px-20 py-28 overflow-hidden"
+  >
+    <!-- 🔹 Effet lumineux doux -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#00ffcc]/10 via-transparent to-[#00e6b3]/5 pointer-events-none"></div>
 
-      <div class="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-16">
-        <!-- Image -->
-        <img
-          src="/images/contact.jpg"
-          alt="Profile"
-          class="about-image w-80 h-56 object-cover rounded-lg shadow-lg"
-        />
+    <div class="max-w-7xl mx-auto relative z-10">
+      <!-- 🔹 Titre principal -->
+      <div class="text-center mb-20">
+        <h2
+          class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-[#00ffcc]"
+        >
+          Entrons en contact
+        </h2>
+        <p
+          class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed"
+        >
+          Vous avez un projet ambitieux ? Une idée à concrétiser ?
+          Ensemble, faisons passer votre vision du concept à la réalité.
+        </p>
+      </div>
 
-        <!-- Contact info -->
-        <div class="text-left space-y-6 text-lg about-text">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 shadow">
-              📍
-            </div>
-            <p class="text-gray-300">Lubumbashi, RDC</p>
-          </div>
-
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 shadow">
-              📧
-            </div>
-            <a href="mailto:andrixngoyi243@gmail.com" class="text-[#00ffcc] hover:underline text-xl">
-              andrixngoyi243@gmail.com
-            </a>
-          </div>
-
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 shadow">
-              📞
-            </div>
-            <a href="tel:+243836066402" class="text-[#00ffcc] hover:underline text-xl">
-              +243 836 066 402
-            </a>
-          </div>
-
+      <!-- 🔹 Bloc infos -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 text-left"
+      >
+        <!-- Adresse -->
+        <div
+          class="border-l-4 border-[#00ffcc] pl-6 space-y-4 transform transition duration-300 hover:translate-y-[-4px]"
+        >
+          <div class="text-3xl">📍</div>
+          <h3 class="font-semibold text-xl text-[#00ffcc]">Adresse</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Lubumbashi, République Démocratique du Congo
+          </p>
+          <p class="text-gray-500 italic text-sm">
+            “Toujours prêt à rencontrer de nouveaux talents et projets.”
+          </p>
         </div>
+
+        <!-- Email -->
+        <div
+          class="border-l-4 border-[#00ffcc] pl-6 space-y-4 transform transition duration-300 hover:translate-y-[-4px]"
+        >
+          <div class="text-3xl">💬</div>
+          <h3 class="font-semibold text-xl text-[#00ffcc]">Email</h3>
+          <a
+            href="mailto:andrixngoyi243@gmail.com"
+            class="text-white hover:text-[#00ffcc] transition-colors duration-300 font-medium text-lg"
+          >
+            andrixngoyi243@gmail.com
+          </a>
+          <p class="text-gray-500 italic text-sm">
+            “Écrivez-moi, je réponds rapidement à chaque message.”
+          </p>
+        </div>
+
+        <!-- Téléphone -->
+        <div
+          class="border-l-4 border-[#00ffcc] pl-6 space-y-4 transform transition duration-300 hover:translate-y-[-4px]"
+        >
+          <div class="text-3xl">📞</div>
+          <h3 class="font-semibold text-xl text-[#00ffcc]">Téléphone</h3>
+          <a
+            href="tel:+243836066402"
+            class="text-white hover:text-[#00ffcc] transition-colors duration-300 font-medium text-lg"
+          >
+            +243 836 066 402
+          </a>
+          <p class="text-gray-500 italic text-sm">
+            “Disponible pour échanger, conseiller et accompagner vos idées.”
+          </p>
+        </div>
+      </div>
+
+      <!-- 🔹 CTA -->
+      <div class="text-center mt-24">
+        <a
+          href="mailto:andrixngoyi243@gmail.com"
+          class="inline-block bg-[#00ffcc] text-gray-900 font-bold px-10 py-4 rounded-full text-lg hover:bg-[#00e6b3] transition-all duration-300 shadow-lg hover:shadow-[#00ffcc]/40"
+        >
+          Discutons de votre projet 🚀
+        </a>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-import { onMounted } from "vue";
-import gsap from "gsap";
-
-onMounted(() => {
-  // Fade in image
-  gsap.from(".about-image", {
-    x: -50,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-  });
-
-  // Fade in text
-  gsap.from(".about-text", {
-    x: 50,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-    delay: 0.3,
-  });
-});
-</script>
-
 <style scoped>
-.about-image, .about-text {
-  transition: all 0.5s ease;
+section {
+  border-radius: 16px;
+}
+
+/* 🔹 Animation subtile des blocs */
+.border-l-4 {
+  transition: all 0.3s ease;
+}
+.border-l-4:hover {
+  border-color: #00e6b3;
 }
 </style>

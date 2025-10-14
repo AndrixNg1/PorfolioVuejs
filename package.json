@@ -16,6 +16,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
+    "@vueuse/motion": "^3.0.3",
     "aos": "^2.3.4",
     "gsap": "^3.13.0",
     "lucide-vue-next": "^0.469.0",
