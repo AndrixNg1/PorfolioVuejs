@@ -152,7 +152,7 @@ const route = useRoute()
 
 const menuItems = [
   { label: 'About', route: '/about', icon: IconUser },
-  { label: 'Projects', route: '/projects', icon: IconFolder },
+  { label: 'Blog', route: '/blog', icon: IconFolder },
 ]
 
 const toggleMenu = () => (isOpen.value = !isOpen.value)
