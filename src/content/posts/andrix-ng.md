@@ -49,7 +49,7 @@ A place where I share my discoveries, insights, and experiences from the trenche
 
 Here, you’ll find:
 
-- 💡 **Technical deep-dives** into frameworks like Next.js, Vue.js ...  
+- 💡 **Technical deep-dives** into frameworks like Next.js, Vue.js, Laravel ...  
 - 🧭 **Practical reflections** on software design, SaaS architecture, and efficient workflows  
 - 📊 **Real-world analyses** of performance, scalability, and developer experience  
 
