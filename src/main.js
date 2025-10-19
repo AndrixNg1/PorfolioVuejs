@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
+// ✅ VERCEL ANALYTICS INTEGRATION
+import { inject } from '@vercel/analytics'
+
 // ✅ FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faDatabase, faLaptopCode, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
@@ -29,3 +32,9 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 
 // --- Montage final ---
 app.mount('#app')
+
+// ✅ DÉCLENCHEMENT DE VERCEL ANALYTICS
+// Une fois que l'application est montée, on injecte le script de suivi.
+// Vercel gère ensuite automatiquement le suivi des vues de page
+// lors des navigations côté client (via Vue Router).
+inject()
